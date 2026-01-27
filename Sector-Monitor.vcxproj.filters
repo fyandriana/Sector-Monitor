@@ -18,5 +18,49 @@
     <ClCompile Include="Sector-Monitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IssueSeveritiy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CsvReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Report.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Monitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+    <None Include="sectors.csv">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="sector.csv">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IssueSeveritiy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SectorSnapshot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Report.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CsvReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Monitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
