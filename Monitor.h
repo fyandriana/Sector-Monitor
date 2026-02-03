@@ -5,6 +5,7 @@
 #include <optional>
 #include "Sector.h"
 #include <unordered_map>
+#include <filesystem>
 
 
 class Monitor {
@@ -13,7 +14,8 @@ public:
 	bool checkOverload(const SectorSnapshot& snapshot);
 	std::string displayReports() const;
 	bool isValidTimestamp(const std::string& ts) const;
-	void run(const std::string& filepath);
+	//void run(const std::string& filepath);
+	void run(const std::filesystem::path& filepath);
 	void reset();
 private:
 	const double m_ratio = 0.80;

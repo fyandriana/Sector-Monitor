@@ -124,6 +124,17 @@ timestamp,sector_id,capacity,aircraft_count
 
 Capacity must remain consistent for a given sector across all rows.
 
+
+---
+
+## Input File Argument
+
+The program accepts the CSV input filename as an optional command-line argument. If a filename is provided, the program uses it as the input file. If no argument is supplied, the program defaults to using `sectors.csv`, which must be located at the root of the project directory. 
+
+File paths may be specified as relative or absolute paths. When passing file paths that contain spaces or special characters, the path must be wrapped in double quotes. 
+
+The program validates the input file before processing and reports an error if the file cannot be found or opened.
+
 ---
 
 ## Example Execution

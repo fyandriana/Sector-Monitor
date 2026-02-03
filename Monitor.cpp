@@ -163,7 +163,7 @@ std::string Monitor::displayReports() const
     return oss.str();
 }
 
-void Monitor::run(const std::string& filepath)
+void Monitor::run(const std::filesystem::path& filepath)
 {
     reset();
     try {

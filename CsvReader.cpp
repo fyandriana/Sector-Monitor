@@ -53,11 +53,13 @@ Row CsvReader::readOne(const std::string& line, const int n) const
     return csvRow;
 }
 
-std::vector<Row> CsvReader::readAll(const std::string& filepath) const
+std::vector<Row> CsvReader::readAll(const std::filesystem::path& filepath) const
 {
-    std::ifstream csvFile(std::filesystem::absolute( filepath));
+   
+
+    std::ifstream csvFile(filepath);
     if (!csvFile) {
-        throw std::runtime_error(std::format("File does not exist or cannot be opened: {}", filepath));
+        throw std::runtime_error(std::format("File does not exist or cannot be opened: {}", filepath.string()));
     }
 
     std::vector<Row> csvRows;
