@@ -1,0 +1,12 @@
+{
+    "version": "0.2.1",
+    "configurations": [
+        {
+            "type": "default",
+            "project": "CMakeLists.txt",
+            "name": "sector_monitor",
+            "currentDir": "${workspaceRoot}",
+            "args": [ "sectors.csv" ]
+        }
+    ]
+}

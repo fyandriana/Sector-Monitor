@@ -3,6 +3,44 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# ----------------------------
+# CMake (Visual Studio + CLI)
+# ----------------------------
+# Common CMake build folders
+/build/
+/build-*/
+/cmake-build-*/
+/out/
+/out-*/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/compile_commands.json
+/CTestTestfile.cmake
+/Testing/
+/*.ninja
+/.ninja_deps
+/.ninja_log
+/CMakeUserPresets.json
+
+# Visual Studio CMake cache folders (VS uses these a lot)
+# (VS often builds into out/ or a hidden cmake folder)
+**/out/**
+**/.cmake/**
+
+# If you keep using VS solution sometimes, ignore generated solution/project files
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Binaries (if you don’t want any exe committed)
+*.exe
+*.dll
+*.lib
+*.obj
+*.pdb
+
 # User-specific files
 *.rsuser
 *.suo
