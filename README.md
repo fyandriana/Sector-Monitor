@@ -9,6 +9,22 @@ The program processes structured sector snapshots over time, applies explicit mo
 This ensures complete visibility into sector load evolution and supports traceable operational diagnostics.
 
 ---
+## CMake Migration
+
+This project was originally structured as a Visual Studio solution-based build.
+It has been migrated to a CMake-based build system to modernize the architecture and improve portability.
+
+The migration provides:
+
+- Cross-platform build capability
+- Cleaner repository (no IDE-generated project files tracked)
+- Manifest-based dependency management using vcpkg
+- Improved CI/CD compatibility
+- Clear separation between source code and build artifacts
+
+The project now follows a modern CMake layout using `CMakeLists.txt` and `vcpkg.json`.
+
+---
 
 ## Objectives
 
@@ -124,14 +140,19 @@ timestamp,sector_id,capacity,aircraft_count
 
 Capacity must remain consistent for a given sector across all rows.
 
-
 ---
 
 ## Input File Argument
 
-The program accepts the CSV input filename as an optional command-line argument. If a filename is provided, the program uses it as the input file. If no argument is supplied, the program defaults to using `sectors.csv`, which must be located at the root of the project directory. 
+The program accepts the CSV input filename as an optional command-line argument:
 
-File paths may be specified as relative or absolute paths. When passing file paths that contain spaces or special characters, the path must be wrapped in double quotes. 
+    sector_monitor <csv_file>
+
+If a filename is provided, the program uses it as the input file.
+If no argument is supplied, the program defaults to using `sectors.csv`.
+
+File paths may be specified as relative or absolute paths.
+Paths containing spaces must be wrapped in double quotes.
 
 The program validates the input file before processing and reports an error if the file cannot be found or opened.
 
@@ -154,16 +175,24 @@ The program never stops after the first warning or error.
 
 ### Requirements
 
-- C++17 or later compatible compiler
+- C++20 or later compatible compiler
 - Visual Studio 2022 (tested)
+- Desktop development with C++ workload
+- CMake (bundled with Visual Studio)
+- vcpkg (manifest mode enabled)
 
-### Steps
+### Build Instructions
 
-1. Open the project in Visual Studio
-2. Set the language standard to **C++17 or later**
-3. Build the solution
-4. Place the CSV file in the working directory
-5. Run the program
+1. Clone the repository:
+
+    git clone <repository-url>
+
+2. Open Visual Studio
+3. Select File → Open → Folder
+4. Choose the project root (where `CMakeLists.txt` is located)
+5. Build the project
+
+Visual Studio will automatically configure CMake and restore dependencies.
 
 ---
 
@@ -173,6 +202,7 @@ The program never stops after the first warning or error.
 - Monitoring logic favors correctness and traceability over premature optimization
 - All thresholds and assumptions are explicit and documented
 - Code prioritizes readability and maintainability
+- Build system designed for portability and clean repository structure
 
 ---
 
@@ -181,12 +211,12 @@ The program never stops after the first warning or error.
 - Sector capacity is static during the observation period
 - No prediction or forecasting is performed
 - No visualization or UI components are included
-- No external dependencies are used
+- No runtime configuration files are required
 
 ---
 
 ## Summary
 
 This project demonstrates disciplined C++ backend design, structured data monitoring, and safety-oriented reasoning in an air traffic management context.  
-It reflects an engineering approach aligned with the expectations of operational systems such as airspace capacity monitoring.
+It reflects an engineering approach aligned with operational systems such as airspace capacity monitoring, while adopting a modern CMake-based architecture for maintainability and portability.
 
